@@ -18,6 +18,7 @@ fi
 echo "Building project..."
 cd "$BUILD_DIR"
 cmake "$REPO_DIR" .
+make
 
 if [ $? -ne 0 ]; then
     echo "Build failed. Exiting."

@@ -16,7 +16,8 @@ if ERRORLEVEL 1 (
 )
 
 cd /d %BUILD_DIR%
-cmake %REPO_DIR% .  /p:Configuration=Release
+cmake %REPO_DIR% . 
+cmake --build .
 
 if ERRORLEVEL 1 (
     echo Build failed. Exiting.
