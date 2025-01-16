@@ -1,0 +1,5 @@
+PROJECT(copy_timer)
+ADD_EXECUTABLE(process_logger process_logger.cpp)
+IF (NOT WIN32)
+    TARGET_LINK_LIBRARIES(process_logger copy_timer)
+ENDIF (NOT WIN32)
