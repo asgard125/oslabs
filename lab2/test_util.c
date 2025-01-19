@@ -1,19 +1,15 @@
 #ifdef WIN32
 #    include <windows.h>
 # 	 include <stdio.h>
-#    define MAX_LEN MAX_PATH
 #else
 #    include <limits.h>
 #    include <unistd.h>
 # 	 include <stdio.h>
-#    define MAX_LEN NAME_MAX
 #endif
 
-#define BLOCK_PARENT 1
-
 struct Program {
-    const char prog_name[MAX_LEN + 1];
-    char *arv[10];
+    const char prog_name[256];
+    char *arv[32];
 };
 
 void start_process(struct Program program,
@@ -28,10 +24,10 @@ int main()
 	struct Program program = {"child_process", {"child_process", "1", NULL}};
 #endif
     printf("\n\n parent block true \n\n\n");
-    start_process(program, BLOCK_PARENT);
+    start_process(program, 1);
 
     printf("\n\n parent block false\n\n\n");
-    start_process(program, !BLOCK_PARENT);
+    start_process(program, 0);
 
     return 0;
 }
