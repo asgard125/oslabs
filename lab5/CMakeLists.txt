@@ -7,7 +7,7 @@ add_executable(main main.c ${SQLITE3_SRC})
 
 add_executable(emulator emulator.c)
 
-add_executable(temp.cgi temp.c ${SQLITE3_SRC})
+add_executable(client.cgi client.c ${SQLITE3_SRC})
 
 if(WIN32)
     target_link_libraries(main ws2_32)
